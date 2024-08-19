@@ -42,6 +42,9 @@
 
     # core languages
     rustup
+    nodejs_22
+    go
+    typescript
 
     # rust stuff
     cargo-cache
@@ -58,7 +61,10 @@
     nodePackages.vscode-langservers-extracted # html, css, json, eslint
     nodePackages.yaml-language-server
     nil # nix
-
+    golangci-lint-langserver # golang
+    gopls # golang
+    nodePackages.typescript-language-server # ts/js
+  
     # formatters and linters
     alejandra # nix
     deadnix # nix
@@ -66,6 +72,7 @@
     shellcheck
     shfmt
     statix # nix
+    golangci-lint # golang
   ];
 in {
   imports = [
