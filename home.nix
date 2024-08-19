@@ -41,18 +41,10 @@
     just
 
     # core languages
-    rustup
-
-    # rust stuff
-    cargo-cache
-    cargo-expand
-
+    
     # local dev stuf
     mkcert
     httpie
-
-    # treesitter
-    tree-sitter
 
     # language servers
     nodePackages.vscode-langservers-extracted # html, css, json, eslint
