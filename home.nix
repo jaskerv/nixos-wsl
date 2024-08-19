@@ -1,5 +1,4 @@
 {
-  # FIXME: uncomment the next line if you want to reference your GitHub/GitLab access tokens and other secrets
   # secrets,
   pkgs,
   username,
@@ -28,17 +27,12 @@
     tmux
     tree
     unzip
-    vim
     wget
     zip
   ];
 
   stable-packages = with pkgs; [
     # FIXME: customize these stable packages to your liking for the languages that you use
-
-    # FIXME: you can add plugins, change keymaps etc using (jeezyvim.nixvimExtend {})
-    # https://github.com/LGUG2Z/JeezyVim#extending
-    jeezyvim
 
     # key tools
     gh # for bootstrapping
@@ -141,18 +135,14 @@ in {
         side-by-side = true;
         navigate = true;
       };
-      userEmail = ""; # FIXME: set your git email
-      userName = ""; #FIXME: set your git username
+      userEmail = "jono2496@gmail.com"; # FIXME: set your git email
+      userName = "jono"; #FIXME: set your git username
       extraConfig = {
-        # FIXME: uncomment the next lines if you want to be able to clone private https repos
-        # url = {
-        #   "https://oauth2:${secrets.github_token}@github.com" = {
-        #     insteadOf = "https://github.com";
-        #   };
-        #   "https://oauth2:${secrets.gitlab_token}@gitlab.com" = {
-        #     insteadOf = "https://gitlab.com";
-        #   };
-        # };
+        url = {
+          # "https://oauth2:${secrets.github_token}@github.com" = {
+            # insteadOf = "https://github.com";
+          # };
+        };
         push = {
           default = "current";
           autoSetupRemote = true;
@@ -183,6 +173,7 @@ in {
           + "/extras/kanagawa.fish")}
 
         set -U fish_greeting
+        fish_add_path --append /mnt/c/Users/jono2/scoop/apps/win32yank/0.1.1
       '';
       functions = {
         refresh = "source $HOME/.config/fish/config.fish";
@@ -244,6 +235,14 @@ in {
           name = "sponge";
         }
       ];
+    };
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
     };
   };
 }
