@@ -3,6 +3,8 @@
   pkgs,
   username,
   nix-index-database,
+  inputs,
+  system,
   ...
 }: let
   unstable-packages = with pkgs.unstable; [
@@ -240,6 +242,7 @@ in {
 
     neovim = {
       enable = true;
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;

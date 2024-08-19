@@ -90,6 +90,10 @@
   #   '';
   # };
 
+  environment.systemPackages = [
+    pkgs.gccgo14
+  ];
+
   nix = {
     settings = {
       trusted-users = [username];
