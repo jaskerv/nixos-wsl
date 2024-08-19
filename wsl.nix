@@ -22,7 +22,13 @@
 
   # FIXME: uncomment the next line to enable SSH
   services.openssh.enable = true;
-  programs.ssh.startAgent = true; 
+  programs.ssh = {
+    startAgent = true;
+    # hostKeyAlgorithms = [
+    #   "/home/${username}/.ssh/id_ed25519"
+    # ];
+  };
+
   users.users.${username} = {
     isNormalUser = true;
     # FIXME: change your shell here if you don't want fish
