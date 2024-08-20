@@ -14,7 +14,9 @@
 
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    nixvim.url = "github:nix-community/nixvim/nixos-24.05";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs = inputs:
     with inputs; let
@@ -50,7 +52,7 @@
       };
 
       argDefaults = {
-        inherit secrets inputs self nix-index-database;
+        inherit secrets inputs self nix-index-database nixvim;
         channels = {
           inherit nixpkgs nixpkgs-unstable;
         };

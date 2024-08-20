@@ -3,7 +3,7 @@
   pkgs,
   username,
   nix-index-database,
-  inputs,
+  nixvim,
   system,
   ...
 }: let
@@ -77,6 +77,7 @@
 in {
   imports = [
     nix-index-database.hmModules.nix-index
+    nixvim.homeManagerModules.nixvim
   ];
 
   home.stateVersion = "22.11";
@@ -246,13 +247,10 @@ in {
         }
       ];
     };
-
-    neovim = {
+    
+    nixvim = {
       enable = true;
-      package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
       defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
       vimdiffAlias = true;
     };
   };
