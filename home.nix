@@ -3,7 +3,6 @@
   pkgs,
   username,
   nix-index-database,
-  nixvim,
   system,
   ...
 }: let
@@ -77,7 +76,7 @@
 in {
   imports = [
     nix-index-database.hmModules.nix-index
-    nixvim.homeManagerModules.nixvim
+    ./modules/nvim  
   ];
 
   home.stateVersion = "22.11";
@@ -246,12 +245,6 @@ in {
 	  name = "plugin-git";
         }
       ];
-    };
-    
-    nixvim = {
-      enable = true;
-      defaultEditor = true;
-      vimdiffAlias = true;
     };
   };
 }
