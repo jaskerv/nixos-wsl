@@ -1,5 +1,5 @@
 {
-  # secrets,
+  secrets,
   pkgs,
   username,
   nix-index-database,
@@ -148,9 +148,9 @@ in {
       userName = "jono"; #FIXME: set your git username
       extraConfig = {
         url = {
-          # "https://oauth2:${secrets.github_token}@github.com" = {
-            # insteadOf = "https://github.com";
-          # };
+          "https://oauth2:${secrets.github_token}@github.com" = {
+            insteadOf = "https://github.com";
+          };
         };
         push = {
           default = "current";

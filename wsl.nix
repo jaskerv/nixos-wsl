@@ -1,5 +1,5 @@
 {
-  # secrets,
+  secrets,
   username,
   hostname,
   pkgs,
@@ -98,7 +98,7 @@
     settings = {
       trusted-users = [username];
       access-tokens = [
-        # "github.com=${secrets.github_token}"
+        "github.com=${secrets.github_token}"
       ];
 
       accept-flake-config = true;
