@@ -34,8 +34,8 @@
 
   stable-packages = with pkgs; [
     # FIXME: customize these stable packages to your liking for the languages that you use
-
     # key tools
+    jononvim
     gh # for bootstrapping
     just
 
@@ -76,7 +76,7 @@
 in {
   imports = [
     nix-index-database.hmModules.nix-index
-    ./modules/nvim  
+    # ./modules/nvim  
   ];
 
   home.stateVersion = "22.11";

@@ -14,9 +14,8 @@
 
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixvim.url = "github:nix-community/nixvim/nixos-24.05";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    
+    jononvim.url = "github:jaskerv/nixvim";
   };
   outputs = inputs:
     with inputs; let
@@ -34,6 +33,7 @@
 
         overlays = [
           nur.overlay
+          jononvim.overlays.default
 
           (_final: prev: {
             unstable = import nixpkgs-unstable {
@@ -52,7 +52,7 @@
       };
 
       argDefaults = {
-        inherit secrets inputs self nix-index-database nixvim;
+        inherit secrets inputs self nix-index-database;
         channels = {
           inherit nixpkgs nixpkgs-unstable;
         };
