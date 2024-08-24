@@ -36,6 +36,7 @@
     # FIXME: customize these stable packages to your liking for the languages that you use
     # key tools
     jononvim
+    luarocks-nix
     gh # for bootstrapping
     just
 
@@ -44,6 +45,7 @@
     nodejs_22
     go
     typescript
+    lua
 
     # rust stuff
     cargo-cache
@@ -221,6 +223,9 @@ in {
           gsl = "git stash list";
         };
       shellAliases = {
+	v = "nvim";
+	vi = "nvim";
+	vim = "nvim";
         jvim = "nvim";
         lvim = "nvim";
         pbcopy = "/mnt/c/Windows/System32/clip.exe";
