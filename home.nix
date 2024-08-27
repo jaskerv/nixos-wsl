@@ -1,11 +1,11 @@
-{
-  secrets,
-  pkgs,
-  username,
-  nix-index-database,
-  system,
-  ...
-}: let
+{ secrets
+, pkgs
+, username
+, nix-index-database
+, system
+, ...
+}:
+let
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
     bat
@@ -39,6 +39,7 @@
     luarocks-nix
     gh # for bootstrapping
     just
+    devbox
 
     # core languages
     rustup
@@ -65,7 +66,7 @@
     golangci-lint-langserver # golang
     gopls # golang
     nodePackages.typescript-language-server # ts/js
-  
+
     # formatters and linters
     alejandra # nix
     deadnix # nix
@@ -75,7 +76,8 @@
     statix # nix
     golangci-lint # golang
   ];
-in {
+in
+{
   imports = [
     nix-index-database.hmModules.nix-index
     # ./modules/nvim  
@@ -131,7 +133,7 @@ in {
     lsd.enableAliases = true;
     zoxide.enable = true;
     zoxide.enableFishIntegration = true;
-    zoxide.options = ["--cmd cd"];
+    zoxide.options = [ "--cmd cd" ];
     broot.enable = true;
     broot.enableFishIntegration = true;
     direnv.enable = true;
@@ -223,9 +225,9 @@ in {
           gsl = "git stash list";
         };
       shellAliases = {
-	v = "nvim";
-	vi = "nvim";
-	vim = "nvim";
+        v = "nvim";
+        vi = "nvim";
+        vim = "nvim";
         jvim = "nvim";
         lvim = "nvim";
         pbcopy = "/mnt/c/Windows/System32/clip.exe";
@@ -245,9 +247,9 @@ in {
           inherit (pkgs.fishPlugins.sponge) src;
           name = "sponge";
         }
-	{
+        {
           inherit (pkgs.fishPlugins.plugin-git) src;
-	  name = "plugin-git";
+          name = "plugin-git";
         }
       ];
     };
