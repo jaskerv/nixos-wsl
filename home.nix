@@ -52,7 +52,7 @@ let
     cargo-cache
     cargo-expand
 
-    # local dev stuf
+    # local dev stuff
     mkcert
     httpie
 
@@ -183,6 +183,7 @@ in
           + "/extras/kanagawa.fish")}
 
         set -U fish_greeting
+        
         fish_add_path --append /mnt/c/Users/jono2/scoop/apps/win32yank/0.1.1
       '';
       functions = {
@@ -250,6 +251,10 @@ in
         {
           inherit (pkgs.fishPlugins.plugin-git) src;
           name = "plugin-git";
+        }
+        {
+          inherit (pkgs.fishPlugins.fzf-fish) src;
+          name = "fzf-fish";
         }
       ];
     };
