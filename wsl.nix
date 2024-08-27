@@ -1,10 +1,9 @@
-{
-  secrets,
-  username,
-  hostname,
-  pkgs,
-  inputs,
-  ...
+{ secrets
+, username
+, hostname
+, pkgs
+, inputs
+, ...
 }: {
   # FIXME: change to your tz! look it up with "timedatectl list-timezones"
   time.timeZone = "America/Los_Angeles";
@@ -13,8 +12,8 @@
 
   # FIXME: change your shell here if you don't want fish
   programs.fish.enable = true;
-  environment.pathsToLink = ["/share/fish"];
-  environment.shells = [pkgs.fish];
+  environment.pathsToLink = [ "/share/fish" ];
+  environment.shells = [ pkgs.fish ];
 
   environment.enableAllTerminfo = true;
 
@@ -96,7 +95,7 @@
 
   nix = {
     settings = {
-      trusted-users = [username];
+      trusted-users = [ username ];
       access-tokens = [
         "github.com=${secrets.github_token}"
       ];
