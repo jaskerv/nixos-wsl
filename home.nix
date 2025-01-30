@@ -147,13 +147,13 @@ in
         navigate = true;
       };
       userEmail = "jono2496@gmail.com"; # FIXME: set your git email
-      userName = "jono"; #FIXME: set your git username
+      userName = "Jono Yan"; #FIXME: set your git username
       extraConfig = {
-        url = {
-          "https://oauth2:${secrets.github_token}@github.com" = {
-            insteadOf = "https://github.com";
-          };
-        };
+        # url = {
+        #   "https://oauth2:${secrets.github_token}@github.com" = {
+        #     insteadOf = "https://github.com";
+        #   };
+        # };
         push = {
           default = "current";
           autoSetupRemote = true;

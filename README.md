@@ -79,7 +79,7 @@ install win32yank` or compiling it from source, and then adding it to your `$PAT
 - Install it (tweak the command to your desired paths):
 
 ```powershell
-wsl --import NixOS .\NixOS\ .\nixos-wsl.tar.gz --version 2
+wsl --import NixOS $env:USERPROFILE\NixOS\ .\nixos-wsl.tar
 ```
 
 - Enter the distro:
@@ -91,7 +91,7 @@ wsl -d NixOS
 - Get a copy of this repo (you'll probably want to fork it eventually):
 
 ```bash
-git clone https://github.com/LGUG2Z/nixos-wsl-starter.git /tmp/configuration
+git clone https://github.com/jaskerv/nixos-wsl.git /tmp/configuration
 cd /tmp/configuration
 ```
 
@@ -114,7 +114,7 @@ wsl -d NixOS
 - Move the configuration to your new home directory
 
 ```bash
-mv /tmp/configuration ~/configuration
+mv /tmp/configuration ~/nixos-wsl
 ```
 
 - Go through all the `FIXME:` notices in `~/configuration` and make changes
@@ -122,11 +122,17 @@ mv /tmp/configuration ~/configuration
 - Apply the configuration
 
 ```bash
-sudo nixos-rebuild switch --flake ~/configuration
+sudo nixos-rebuild switch --flake ~/nixos-wsl
 ```
 
 Note: If developing in Rust, you'll still be managing your toolchains and
 components like `rust-analyzer` with `rustup`!
+
+### Update
+
+```bash
+nix flake update ~/nixos-wsl
+```
 
 ## Project Layout
 
