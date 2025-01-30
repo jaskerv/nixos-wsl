@@ -128,6 +128,18 @@ sudo nixos-rebuild switch --flake ~/nixos-wsl
 Note: If developing in Rust, you'll still be managing your toolchains and
 components like `rust-analyzer` with `rustup`!
 
+### Github token
+
+This helps with rate limits.
+
+- Create token from [github](https://github.com/settings/tokens).
+- Modify `secrets.json` with token and uncomment code for `github_token`.
+- Change github token.
+
+```bash
+sudo nixos-rebuild switch --flake ~/nixos-wsl
+```
+
 ### Update
 
 ```bash

@@ -96,6 +96,7 @@
   nix = {
     settings = {
       trusted-users = [ username ];
+      # FIXME: uncomment and set github token
       # access-tokens = [
       #   "github.com=${secrets.github_token}"
       # ];

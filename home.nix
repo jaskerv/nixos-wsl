@@ -149,6 +149,7 @@ in
       userEmail = "jono2496@gmail.com"; # FIXME: set your git email
       userName = "Jono Yan"; #FIXME: set your git username
       extraConfig = {
+        # FIXME: uncomment and set github token.
         # url = {
         #   "https://oauth2:${secrets.github_token}@github.com" = {
         #     insteadOf = "https://github.com";
